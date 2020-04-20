@@ -1,2 +1,7 @@
 # Project exclude paths
+
+# Python
 /venv/
+
+# Javascript
+/frontend/node_modules/
