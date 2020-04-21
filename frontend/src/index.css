@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+#root {
+  height: 100vh !important;
+}
+
+html, body, #root {
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+}
+
