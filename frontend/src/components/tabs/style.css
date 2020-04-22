@@ -1,17 +1,46 @@
 .left-tabs {
-  background-color: #00121b;
-  height: 36rem;
-  width: 60rem;
+  background-color: #011119;
+  height: 38rem;
+  width: 64rem;
 }
 
 .tabs {
-  background-color: #00121b;
+  transition: width .3s;
 }
 
-.brand {
-  font-size: 1.1rem;
+.tabs .nav-link {
+  border-left: solid transparent !important;
+  transition: border-left-color .3s;
+  outline: none;
 }
 
-.content {
-  background-color: #011118;
+.tabs .nav-link,
+.tabs .version {
+  font-size: .875rem;
+}
+
+.tabs .nav-link:hover {
+  color: #bbb !important;
+}
+
+.tabs .nav-link.active {
+  background-color: transparent !important;
+  border-left: solid #39adae !important;
+  color: #39adae !important;
+}
+
+.collapsed {
+  width: 3.5rem;
+}
+
+.expanded {
+  width: 14rem;
+}
+
+.brand-collapsed {
+  font-size: 1.5rem;
+}
+
+.brand-expanded {
+  font-size: 2rem;
 }

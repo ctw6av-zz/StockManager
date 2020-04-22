@@ -1,20 +1,23 @@
-import {TabsContextProvider} from "./components/tabs/tabs-context";
+import {TabsContext, TabsContextProvider} from "./components/tabs/tabs-context";
+import {ContentContainer} from "./components/containers/content-container";
 import {TabManager} from "./components/tabs/tabs-manager";
 import * as serviceWorker from './serviceWorker';
+import {FiMinimize2} from 'react-icons/fi';
 import 'bootstrap/dist/css/bootstrap.css';
 import ReactDOM from 'react-dom';
 import React from "react";
+import './animations.css';
 import './index.css';
 
 // This component is only for testing
-const NullComponent = (props) => {
+const NullComponent = () => {
+
+  const context = React.useContext(TabsContext);
+
   return (
-    <div>
-      <p>Null</p>
-      <div>
-        {props.children}
-      </div>
-    </div>
+    <ContentContainer backgroundColor="#0D1D29">
+      <FiMinimize2 size={28} onClick={() => context.setCollapsed(!context.collapsed)}/>
+    </ContentContainer>
   )
 };
 
@@ -22,18 +25,21 @@ const NullComponent = (props) => {
 const SearchComponent = () => {
 
   return (
-    <div>
+    <ContentContainer backgroundColor="#fff">
       <p>Search Component</p>
-    </div>
+    </ContentContainer>
   )
 };
 
-// To add a new route in the tabs just insert the component,
-// it's name as specify if it is listed or not.
+// To add a new route in the tabs just insert the component, it's
+// name as specify if it is listed or not or appear at bottom.
 const routes = [
-  {name: "Dashboard", Component: NullComponent, listed: true},
-  {name: "Dashboard1", Component: NullComponent, listed: true},
-  {name: "Search", Component: SearchComponent, listed: false},
+  {name: "Dashboard", Component: NullComponent, listed: true, bottom: false},
+  {name: "Mensagens", Component: NullComponent, listed: true, bottom: false},
+  {name: "Search", Component: SearchComponent, listed: false, bottom: false},
+  {name: "Privacidade", Component: NullComponent, listed: true, bottom: true},
+  {name: "Suporte", Component: NullComponent, listed: true, bottom: true},
+  {name: "Sobre", Component: NullComponent, listed: true, bottom: true},
 ];
 
 ReactDOM.render(
