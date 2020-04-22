@@ -8,7 +8,7 @@ export const ContentContainer = (props) => {
   const {backgroundColor} = props;
 
   return (
-    <div className={`content ${tabContext.collapsed ? "content-expanded" : "content-collapsed"} h-100 p-4`} style={{backgroundColor: backgroundColor}}>
+    <div className={`slide-in-top ${tabContext.collapsed ? "content-expanded" : "content-collapsed"} h-100 p-4`} style={{backgroundColor: backgroundColor}}>
       {props.children}
     </div>
   )

@@ -11,12 +11,8 @@
 .tabs .nav-link {
   border-left: solid transparent !important;
   transition: border-left-color .3s;
-  outline: none;
-}
-
-.tabs .nav-link,
-.tabs .version {
   font-size: .875rem;
+  outline: none;
 }
 
 .tabs .nav-link:hover {
@@ -29,6 +25,10 @@
   color: #39adae !important;
 }
 
+.top-bar {
+  z-index: 1001;
+}
+
 .collapsed {
   width: 3.5rem;
 }
@@ -37,10 +37,34 @@
   width: 14rem;
 }
 
+.brand {
+  transition: font-size .3s;
+}
+
 .brand-collapsed {
   font-size: 1.5rem;
 }
 
 .brand-expanded {
   font-size: 2rem;
+}
+
+.icon-menu {
+  transition: color .3s;
+}
+
+.icon-menu:hover {
+  color: #bbb !important;
+}
+
+.pane {
+  transition: padding-bottom .3s;
+}
+
+.pane-expanded {
+  padding-bottom: 3rem;
+}
+
+.pane-collapsed {
+  padding-bottom: 0.001rem;
 }

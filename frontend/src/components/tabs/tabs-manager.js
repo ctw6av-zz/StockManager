@@ -23,14 +23,14 @@ export const TabManager = () => {
 
                 {/* Sidebar branding */}
                 <div className="d-flex justify-content-center py-5">
-                  <FcAreaChart className={context.collapsed ? "brand-collapsed" : "brand-expanded" } color={"#39adae"}/>
+                  <FcAreaChart className={`brand ${context.collapsed ? "brand-collapsed" : "brand-expanded"}`}/>
                 </div>
 
                 {/* Menu */}
                 <div className="h-100 pt-3">
                   <div className={context.collapsed ? "fade-in d-block h-100": "fade-out d-none"}>
-                    <div className="d-flex justify-content-center align-items-center h-100">
-                      <MdMenu size={28} className="icon-menu" onClick={() => context.setCollapsed(false)}/>
+                    <div className="d-flex justify-content-center h-100 mt-4">
+                      <MdMenu size={28} className="icon-menu text-muted" onClick={() => context.setCollapsed(false)}/>
                     </div>
                   </div>
                   {
@@ -77,19 +77,19 @@ export const TabManager = () => {
             </Nav>
             <Tab.Content className="d-flex flex-column w-100">
 
-              <div className="d-flex justify-content-end align-items-center px-3 py-2">
+              <div className="d-flex justify-content-end align-items-center top-bar px-3 py-2">
                 <div className="mx-5">
                   <FiSearch size={20} className="text-muted mx-3" onClick={() => {context.setActiveKey("Search") && context.setCollapsed(false)}}/>
                   <FiBell size={20} className="text-muted"/>
                 </div>
-                <img width={28} className="rounded-circle" src="https://yt3.ggpht.com/a-/AOh14Ghp-xieqtM2pfPsD0TYnOVBAw46HnjpRciLVyG2kw=s88-c-k-c0xffffffff-no-rj-mo"/>
+                <img alt="" width={28} className="rounded-circle" src="https://yt3.ggpht.com/a-/AOh14Ghp-xieqtM2pfPsD0TYnOVBAw46HnjpRciLVyG2kw=s88-c-k-c0xffffffff-no-rj-mo"/>
               </div>
 
               {
                 // Here all components routes are available and
                 // depending on "listed" key to be visible
                 context.routes.map(({name, Component}) => (
-                  <Tab.Pane eventKey={name} className={`content ${context.collapsed ? "" : "pb-5"} h-100`}>
+                  <Tab.Pane eventKey={name} className={`pane ${context.collapsed ? "pane-collapsed" : "pane-expanded"} h-100`}>
                     <Component/>
                   </Tab.Pane>
                 ))
