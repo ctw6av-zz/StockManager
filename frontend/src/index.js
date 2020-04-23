@@ -13,7 +13,7 @@ import './index.css';
 const NullComponent = () => {
 
   const context = React.useContext(TabsContext);
-
+ 
   return (
     <ContentContainer backgroundColor="#0D1D29">
       <FiMinimize2 size={28} onClick={() => context.setCollapsed(!context.collapsed)}/>

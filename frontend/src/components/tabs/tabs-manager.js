@@ -1,4 +1,4 @@
-import {TabsContext, TabsContextProvider} from "./tabs-context";
+import {TabsContext} from "./tabs-context";
 import {FcAreaChart} from 'react-icons/fc';
 import {Nav, Tab} from "react-bootstrap";
 import {FiSearch} from 'react-icons/fi';
@@ -89,7 +89,7 @@ export const TabManager = () => {
                 // Here all components routes are available and
                 // depending on "listed" key to be visible
                 context.routes.map(({name, Component}) => (
-                  <Tab.Pane eventKey={name} className={`pane ${context.collapsed ? "pane-collapsed" : "pane-expanded"} h-100`}>
+                  <Tab.Pane eventKey={name} className={`pane ${context.collapsed ? "pane-expanded" : "pane-collapsed"} h-100`}>
                     <Component/>
                   </Tab.Pane>
                 ))

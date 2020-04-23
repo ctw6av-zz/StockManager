@@ -1,7 +1,8 @@
 .left-tabs {
   background-color: #011119;
-  height: 38rem;
-  width: 64rem;
+  height: 100%;
+  width: 100%;
+
 }
 
 .tabs {
@@ -38,7 +39,7 @@
 }
 
 .brand {
-  transition: font-size .3s;
+  transition: font-size .3s !important;
 }
 
 .brand-collapsed {
@@ -58,13 +59,22 @@
 }
 
 .pane {
-  transition: padding-bottom .3s;
-}
-
-.pane-expanded {
-  padding-bottom: 3rem;
+  transition: padding-bottom .3s, padding-top .3s !important;
 }
 
 .pane-collapsed {
+  padding-bottom: 3rem;
+  padding-top: 1rem;
+}
+
+.pane-expanded {
   padding-bottom: 0.001rem;
+  padding-top: 0.001rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .left-tabs {
+    height: 38rem;
+    width: 64rem;
+  }
 }
