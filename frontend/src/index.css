@@ -17,3 +17,22 @@ html, body, #root {
   overflow: hidden;
 }
 
+.icon {
+  transition: color .3s;
+}
+
+.icon-light {
+  color: #bbbbbb !important;
+}
+
+.icon-light:hover {
+  color: #ffffff !important;
+}
+
+.icon-dark {
+  color: #444444 !important;
+}
+
+.icon-dark:hover {
+  color: #000000 !important;
+}

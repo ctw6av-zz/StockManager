@@ -54,7 +54,7 @@ export const TabManager = () => {
                       : null
                   }
                 </div>
-                <div className="pb-3">
+                <div className="pb-5">
                   {
                     !context.collapsed ?
                       context.routes.map(({name, bottom}) => (
@@ -79,8 +79,8 @@ export const TabManager = () => {
 
               <div className="d-flex justify-content-end align-items-center top-bar px-3 py-2">
                 <div className="mx-5">
-                  <FiSearch size={20} className="text-muted mx-3" onClick={() => {context.setActiveKey("Search") && context.setCollapsed(false)}}/>
-                  <FiBell size={20} className="text-muted"/>
+                  <FiSearch size={18} className="icon icon-light mx-3" onClick={() => {context.setActiveKey("Search") && context.setCollapsed(false)}}/>
+                  <FiBell size={18} className="icon icon-light"/>
                 </div>
                 <img alt="" width={28} className="rounded-circle" src="https://yt3.ggpht.com/a-/AOh14Ghp-xieqtM2pfPsD0TYnOVBAw46HnjpRciLVyG2kw=s88-c-k-c0xffffffff-no-rj-mo"/>
               </div>

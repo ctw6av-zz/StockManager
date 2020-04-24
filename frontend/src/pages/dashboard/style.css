@@ -1,0 +1,20 @@
+.shortcut {
+  transition: background-color .3s, color .3s !important;
+}
+
+.shortcut-top {
+  background-color: #091d27;
+}
+
+.shortcut-top:hover {
+  background-color: #07171f;
+}
+
+.shortcut-bottom {
+  background-color: #091d27;
+  color: #bbbbbb !important;
+}
+.shortcut-bottom:hover {
+  background-color: #07171f;
+  color: #39adae !important;
+}
