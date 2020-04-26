@@ -1,7 +1,7 @@
 import {SwitchFullScreen} from "../switchers/switchers";
+import {LoadAnimation} from "../loading/loader-manager";
 import './content-container.css';
 import React from 'react';
-import {LoadAnimation} from "../loading/loader-manager";
 
 // Handle all pages content. All the app pages
 // should be encapsulated by this component.
