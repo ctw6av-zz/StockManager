@@ -9,16 +9,16 @@ import React from "react";
 // icon-dark -> When in clear background colors;
 export const SwitchFullScreen = (props) => {
 
-  const context = React.useContext(TabsContext);
+  const tabs = React.useContext(TabsContext);
   const {iconStyle} = props;
 
   return (
     <div className="d-flex justify-content-end p-3">
       {
-        context.collapsed ?
-          <AiOutlineFullscreenExit className={`icon ${iconStyle ? iconStyle : "icon-light"} fade-in`} size={22} onClick={() => context.setCollapsed(!context.collapsed)}/>
+        tabs.collapsed ?
+          <AiOutlineFullscreenExit className={`icon ${iconStyle ? iconStyle : "icon-light"} fade-in`} size={22} onClick={() => tabs.setCollapsed(!tabs.collapsed)}/>
         :
-          <AiOutlineFullscreen className={`icon ${iconStyle ? iconStyle : "icon-light"} fade-in`} size={22} onClick={() => context.setCollapsed(!context.collapsed)}/>
+          <AiOutlineFullscreen className={`icon ${iconStyle ? iconStyle : "icon-light"} fade-in`} size={22} onClick={() => tabs.setCollapsed(!tabs.collapsed)}/>
       }
     </div>
   )

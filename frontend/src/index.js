@@ -10,6 +10,7 @@ import ReactDOM from 'react-dom';
 import React from "react";
 import './animations.css';
 import './global.css';
+import {LoadingProvider} from "./components/loading/loading-context";
 
 // This component is only for testing
 const NullComponent = () => {
@@ -40,9 +41,11 @@ const routes = [
 
 ReactDOM.render(
   <React.StrictMode>
-    <TabsContextProvider routes={routes}>
-      <TabManager/>
-    </TabsContextProvider>
+    <LoadingProvider>
+      <TabsContextProvider routes={routes}>
+        <TabManager/>
+      </TabsContextProvider>
+    </LoadingProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

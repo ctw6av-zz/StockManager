@@ -1,6 +1,7 @@
 import {SwitchFullScreen} from "../switchers/switchers";
 import './content-container.css';
 import React from 'react';
+import {LoadAnimation} from "../loading/loader-manager";
 
 // Handle all pages content. All the app pages
 // should be encapsulated by this component.
@@ -10,8 +11,10 @@ export const ContentContainer = (props) => {
 
   return (
     <div className="slide-in-top content overflow-auto h-100 px-5 py-4" style={{backgroundColor: backgroundColor}}>
-      <SwitchFullScreen iconStyle={iconStyle}/>
-      {props.children}
+      <LoadAnimation>
+        <SwitchFullScreen iconStyle={iconStyle}/>
+        {props.children}
+      </LoadAnimation>
     </div>
   )
 }
