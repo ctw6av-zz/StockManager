@@ -31,7 +31,8 @@ export const TabsContextProvider = (props) => {
   useEffect(() => {
     // Sets the default active tab, it'll be always the first element
     // in routes, since the the element has the flag listed as "true"
-    setActiveKey(props.routes[0].name)
+    // setActiveKey(props.routes[0].name)
+    setActiveKey("Lembretes")
   }, [])
 
   return (

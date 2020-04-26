@@ -1,7 +1,9 @@
 import {TabsContext, TabsContextProvider} from "./components/tabs/tabs-context";
 import {ContentContainer} from "./components/containers/content-container";
+import {LoadingProvider} from "./components/loading/loading-context";
 import {TabManager} from "./components/tabs/tabs-manager";
 import {Dashboard} from "./pages/dashboard/dashboard";
+import {Reminder} from "./pages/reminder/reminder";
 import * as serviceWorker from './serviceWorker';
 import {Search} from "./pages/search/search";
 import {FiMinimize2} from 'react-icons/fi';
@@ -10,7 +12,6 @@ import ReactDOM from 'react-dom';
 import React from "react";
 import './animations.css';
 import './global.css';
-import {LoadingProvider} from "./components/loading/loading-context";
 
 // This component is only for testing
 const NullComponent = () => {
@@ -29,8 +30,8 @@ const NullComponent = () => {
 const routes = [
 
   {name: "Dashboard", Component: Dashboard, listed: true, bottom: false},
-  {name: "Ferramentas", Component: NullComponent, listed: true, bottom: false},
-  {name: "Lembretes", Component: NullComponent, listed: true, bottom: false},
+  {name: "Lembretes", Component: Reminder, listed: true, bottom: false},
+  {name: "Estoque", Component: NullComponent, listed: true, bottom: false},
 
   {name: "Procurar", Component: Search, listed: false, bottom: false},
 
