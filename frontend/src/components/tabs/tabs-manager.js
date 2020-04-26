@@ -4,10 +4,13 @@ import {Nav, Tab} from "react-bootstrap";
 import {FiSearch} from 'react-icons/fi';
 import {FiBell} from 'react-icons/fi';
 import {MdMenu} from 'react-icons/md';
+import './tabs-manager.css';
 import React from "react";
-import './style.css';
 
-
+// This is the manager of all tabs in the system
+// All tabs are passed as props to the context
+// manager in app index so the hole app can see
+// all tabs available in the system.
 export const TabManager = () => {
 
   const context = React.useContext(TabsContext);
@@ -15,10 +18,9 @@ export const TabManager = () => {
   return (
     <Tab.Container id="left-tabs" activeKey={context.activeKey}>
       <div className="d-flex justify-content-center align-items-center h-100">
-        <div className="left-tabs shadow">
-
+        <div className="left-tabs">
           <div className="d-flex h-100">
-            <Nav variant="pills" className={`d-flex flex-column tabs ${context.collapsed ? "collapsed": "expanded"} `}>
+            <Nav variant="pills" className={`d-flex flex-column tabs ${context.collapsed ? "left-tabs-collapsed": "left-tabs-expanded"} `}>
               <div className="d-flex flex-column h-100">
 
                 {/* Sidebar branding */}
@@ -26,20 +28,15 @@ export const TabManager = () => {
                   <FcAreaChart className={`brand ${context.collapsed ? "brand-collapsed" : "brand-expanded"}`}/>
                 </div>
 
-                {/* Menu */}
+                {/* Center menu */}
                 <div className="h-100 pt-3">
-                  <div className={context.collapsed ? "fade-in d-block h-100": "fade-out d-none"}>
-                    <div className="d-flex justify-content-center h-100 mt-4">
-                      <MdMenu size={28} className="icon-menu text-muted" onClick={() => context.setCollapsed(false)}/>
-                    </div>
-                  </div>
                   {
                     !context.collapsed ?
                       context.routes.map(({name, listed, bottom}) => (
                         listed && !bottom ?
                           // If the component is listed we can
-                          // return an item to be displayed in
-                          // nav end in other case we return null
+                          // return an item to be displayed in nav
+                          // end in other case we'll return null
                           <Nav.Item className={context.collapsed ? "fade-out d-none" : "fade-in d-block"}>
                             <div onClick={() => context.setActiveKey(name)}>
                               <Nav.Link className="font-weight-bolder text-muted rounded-0" eventKey={name}>
@@ -51,11 +48,21 @@ export const TabManager = () => {
                           </Nav.Item>
                           : null
                       ))
-                      : null
+                    :
+                      <div className={context.collapsed ? "fade-in d-block h-100": "fade-out d-none"}>
+                        <div className="d-flex justify-content-center h-100 mt-4">
+                          <MdMenu size={28} className="icon-menu text-muted" onClick={() => context.setCollapsed(false)}/>
+                        </div>
+                      </div>
                   }
                 </div>
+
+                {/* Bottom menu */}
                 <div className="pb-5">
                   {
+                    // When the tabs are collapsed we display nothing
+                    // in other case we display only what is with the
+                    // "bottom" key as true.
                     !context.collapsed ?
                       context.routes.map(({name, bottom}) => (
                         bottom ?
@@ -75,21 +82,21 @@ export const TabManager = () => {
                 </div>
               </div>
             </Nav>
+
+            {/* Tabs content */}
             <Tab.Content className="d-flex flex-column w-100">
 
-              <div className="d-flex justify-content-end align-items-center top-bar px-3 py-2">
-                <div className="mx-5">
-                  <FiSearch size={18} className="icon icon-light mx-3" onClick={() => {context.setActiveKey("Search") && context.setCollapsed(false)}}/>
-                  <FiBell size={18} className="icon icon-light"/>
-                </div>
-                <img alt="" width={28} className="rounded-circle" src="https://yt3.ggpht.com/a-/AOh14Ghp-xieqtM2pfPsD0TYnOVBAw46HnjpRciLVyG2kw=s88-c-k-c0xffffffff-no-rj-mo"/>
+              {/* Top bar */}
+              <div className="d-flex justify-content-end py-3 px-5">
+                <FiSearch size={18} className="icon icon-light" onClick={() => context.setActiveKey("Procurar")}/>
+                <FiBell size={18} className="icon icon-light mx-3"/>
               </div>
 
               {
                 // Here all components routes are available and
                 // depending on "listed" key to be visible
                 context.routes.map(({name, Component}) => (
-                  <Tab.Pane eventKey={name} className={`pane ${context.collapsed ? "pane-expanded" : "pane-collapsed"} h-100`}>
+                  <Tab.Pane eventKey={name} className={`pane ${context.collapsed ? "pane-expanded" : "pane-collapsed"} overflow-auto h-100`}>
                     <Component/>
                   </Tab.Pane>
                 ))

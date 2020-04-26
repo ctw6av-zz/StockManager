@@ -1,15 +1,15 @@
 import {TabsContext, TabsContextProvider} from "./components/tabs/tabs-context";
 import {ContentContainer} from "./components/containers/content-container";
-import {Dashboard} from "./pages/dashboard/dashboard";
 import {TabManager} from "./components/tabs/tabs-manager";
+import {Dashboard} from "./pages/dashboard/dashboard";
 import * as serviceWorker from './serviceWorker';
+import {Search} from "./pages/search/search";
 import {FiMinimize2} from 'react-icons/fi';
 import 'bootstrap/dist/css/bootstrap.css';
 import ReactDOM from 'react-dom';
 import React from "react";
 import './animations.css';
-import './index.css';
-import {Search} from "./pages/search/search";
+import './global.css';
 
 // This component is only for testing
 const NullComponent = () => {
@@ -26,9 +26,13 @@ const NullComponent = () => {
 // To add a new route in the tabs just insert the component, it's
 // name as specify if it is listed or not or appear at bottom.
 const routes = [
+
   {name: "Dashboard", Component: Dashboard, listed: true, bottom: false},
-  {name: "Mensagens", Component: NullComponent, listed: true, bottom: false},
-  {name: "Search", Component: Search, listed: false, bottom: false},
+  {name: "Ferramentas", Component: NullComponent, listed: true, bottom: false},
+  {name: "Lembretes", Component: NullComponent, listed: true, bottom: false},
+
+  {name: "Procurar", Component: Search, listed: false, bottom: false},
+
   {name: "Privacidade", Component: NullComponent, listed: true, bottom: true},
   {name: "Suporte", Component: NullComponent, listed: true, bottom: true},
   {name: "Sobre", Component: NullComponent, listed: true, bottom: true},

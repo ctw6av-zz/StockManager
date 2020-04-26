@@ -1,0 +1,6 @@
+.content {
+  border-bottom-left-radius: .25rem !important;
+  border-top-left-radius: .25rem !important;
+  transition: padding .3s !important;
+}
+
