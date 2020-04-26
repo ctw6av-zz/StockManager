@@ -1,4 +1,4 @@
-##StockManager
+# StockManager
 ### Ferramenta para gerenciamento de estoques e lembretes.
 ![alt text](frontend/public/howisit_001.png)
 
