@@ -1,5 +1,4 @@
 import {ContentContainer} from "../../components/containers/content-container";
-import {TabsContext} from "../../components/tabs/tabs-context";
 import {Shortcut, ShortcutLight} from "../../components/shortcuts/shortcuts";
 import {Col, Container, Row} from "react-bootstrap";
 import React from "react";
@@ -26,7 +25,7 @@ export const Dashboard = () => {
         <Row className="slide-in-top">
           {
             shortcutsTop.map((data) => (
-              <Col md={3} className="mb-3">
+              <Col key={data.name} md={3} className="mb-3">
                 <Shortcut {...data}/>
               </Col>
             ))
@@ -36,7 +35,7 @@ export const Dashboard = () => {
         <Row className="slide-in-top my-3">
           {
             shortcutsBottom.map((data) => (
-              <Col md={3} className="mb-3">
+              <Col key={data.name} md={3} className="mb-3">
                 <ShortcutLight {...data}/>
               </Col>
             ))

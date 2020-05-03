@@ -38,7 +38,7 @@ export const TabManager = () => {
                           // If the component is listed we can
                           // return an item to be displayed in nav
                           // end in other case we'll return null
-                          <Nav.Item className={tabs.collapsed ? "fade-out d-none" : "fade-in d-block"}>
+                          <Nav.Item key={name} className={tabs.collapsed ? "fade-out d-none" : "fade-in d-block"}>
                             <div onClick={() => tabs.setActiveKey(name)}>
                               <Nav.Link className="font-weight-bolder text-muted rounded-0" eventKey={name}>
                                 <span className="pl-3">
@@ -67,7 +67,7 @@ export const TabManager = () => {
                     !tabs.collapsed ?
                       tabs.routes.map(({name, bottom}) => (
                         bottom ?
-                          <Nav.Item className={tabs.collapsed ? "fade-out d-none" : "fade-in d-block"}>
+                          <Nav.Item key={name} className={tabs.collapsed ? "fade-out d-none" : "fade-in d-block"}>
                             <span onClick={() => tabs.setActiveKey(name)}>
                               <Nav.Link className="text-muted rounded-0" eventKey={name}>
                                 <span className="pl-3">
@@ -97,7 +97,7 @@ export const TabManager = () => {
                 // Here all components routes are available and
                 // depending on "listed" key to be visible
                 tabs.routes.map(({name, Component}) => (
-                  <Tab.Pane eventKey={name} className={`pane ${tabs.collapsed ? "pane-expanded" : "pane-collapsed"} overflow-auto h-100`}>
+                  <Tab.Pane key={name} eventKey={name} className={`pane ${tabs.collapsed ? "pane-expanded" : "pane-collapsed"} overflow-auto h-100`}>
                     <Component/>
                   </Tab.Pane>
                 ))
