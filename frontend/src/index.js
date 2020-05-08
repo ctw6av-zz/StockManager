@@ -3,7 +3,7 @@ import {ContentContainer} from "./components/containers/content-container";
 import {LoadingProvider} from "./components/loading/loading-context";
 import {TabManager} from "./components/tabs/tabs-manager";
 import {Dashboard} from "./pages/dashboard/dashboard";
-import {Scheduler} from "./pages/reminder/calendar";
+import {Scheduler} from "./pages/reminder/schedule";
 import * as serviceWorker from './serviceWorker';
 import {Search} from "./pages/search/search";
 import {FiMinimize2} from 'react-icons/fi';

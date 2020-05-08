@@ -13,12 +13,12 @@ export const SwitchFullScreen = (props) => {
   const {iconStyle} = props;
 
   return (
-    <div className="d-flex justify-content-end p-3">
+    <div className="d-flex justify-content-end px-3">
       {
         tabs.collapsed ?
-          <AiOutlineFullscreenExit className={`icon ${iconStyle ? iconStyle : "icon-light"} fade-in`} size={22} onClick={() => tabs.setCollapsed(!tabs.collapsed)}/>
+          <AiOutlineFullscreenExit className={`icon ${iconStyle ? iconStyle : "icon-light"} fade-in`} size={20} onClick={() => tabs.setCollapsed(!tabs.collapsed)}/>
         :
-          <AiOutlineFullscreen className={`icon ${iconStyle ? iconStyle : "icon-light"} fade-in`} size={22} onClick={() => tabs.setCollapsed(!tabs.collapsed)}/>
+          <AiOutlineFullscreen className={`icon ${iconStyle ? iconStyle : "icon-light"} fade-in`} size={20} onClick={() => tabs.setCollapsed(!tabs.collapsed)}/>
       }
     </div>
   )

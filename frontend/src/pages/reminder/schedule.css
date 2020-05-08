@@ -1,0 +1,60 @@
+.weekday {
+  cursor: default !important;
+}
+
+.actual-day, .next-day, .prev-day {
+  padding: 0.5rem !important;
+  font-size: .875rem;
+}
+
+.actual-day:hover,
+.next-day:hover,
+.prev-day:hover {
+  background-color: rgba(0, 0, 0, .3);
+  cursor: pointer;
+}
+
+.actual-day.active {
+  color: #ffffff !important;
+  background-color: #39adae;
+}
+
+.events-container {
+  scrollbar-color: rgba(0, 0, 0, .2) transparent;
+  scrollbar-width: thin;
+  overflow-y: auto;
+}
+
+.event-date {
+  font-weight: bolder;
+  font-size: .775rem;
+}
+
+.event {
+  padding-left: .5rem;
+  padding-bottom: 1rem;
+}
+
+.event::before {
+  content:"\A";
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  position: relative;
+  left: -13px;
+  background: cornflowerblue;
+  display:inline-block;
+}
+
+.event-hour {
+  font-size: 3rem;
+}
+
+.event-hour-low {
+  font-weight: bolder;
+  font-size: .775rem;
+}
+
+.event-title {
+  font-weight: bolder;
+}

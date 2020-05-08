@@ -7,6 +7,7 @@ import {MdMenu} from 'react-icons/md';
 import './tabs-manager.css';
 import React from "react";
 import {LoadingContext} from "../loading/loading-context";
+import {SwitchFullScreen} from "../switchers/switchers";
 
 // This is the manager of all tabs in the system
 // All tabs are passed as props to the context
@@ -89,6 +90,7 @@ export const TabManager = () => {
 
               {/* Top bar */}
               <div className="d-flex justify-content-end py-3 px-5">
+                <SwitchFullScreen iconStyle={"icon-light"}/>
                 <FiSearch size={18} className="icon icon-light mr-3" onClick={() => tabs.setActiveKey("Procurar")}/>
                 <FiBell size={18} className="icon icon-light mr-3"/>
               </div>

@@ -10,9 +10,8 @@ export const ContentContainer = (props) => {
   const {backgroundColor, iconStyle} = props;
 
   return (
-    <div className="slide-in-top content overflow-auto h-100 px-5 pt-3" style={{backgroundColor: backgroundColor}}>
+    <div className="slide-in-top content overflow-auto h-100 pl-5 pt-5" style={{backgroundColor: backgroundColor}}>
       <LoadAnimation>
-        <SwitchFullScreen iconStyle={iconStyle}/>
         {props.children}
       </LoadAnimation>
     </div>
