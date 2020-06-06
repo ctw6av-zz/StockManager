@@ -7,5 +7,5 @@ Ferramenta simples para gerenciamento de produtos em estoque, lembretes e ferram
 ### Ambiente de desenvolvimento
 #### Pré-requisitos
     Python==3.7.3
-    Django==3.0.5
+    Django==3.0.7
     Node==3.6.0   
